@@ -1,0 +1,30 @@
+Summary: Dummy package to provides kernel
+Name: vzdummy-kernel-el5
+Group: Applications/System
+Vendor: SWsoft
+License: GPL
+Version: 2.0
+Release: 1.swsoft
+Autoreq: 0
+BuildRoot: %_tmppath/%name-root
+Provides: kernel = 2.6.18
+Obsoletes: kernel, vzdummy-kernel-ce4
+BuildArch: noarch
+
+%description
+Dummy package to provides kernel
+
+%files
+
+%changelog
+* Wed  Apr 05 2006 Evgeny Sokolov <evg@sw.ru> 1.0-3.swsoft
+- provides 2.6.10
+
+* Mon Dec 5 2005 Evgeny Sokolov <evg@sw.ru> 1.0-2.swsoft
+- chahged provides to 2.6.8
+
+* Tue Nov 8 2005 Evgeny Sokolov <evg@sw.ru> 1.0-1.swsoft
+- copied from fc4
+
+* Tue Oct 31 2005 Serguei Krasnov <krasnov@sw.ru> 1.0-1.swsoft
+- created

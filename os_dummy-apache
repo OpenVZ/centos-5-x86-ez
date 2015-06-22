@@ -1,0 +1,61 @@
+Summary: Dummy package to tune apache MaxClients
+Name: vzdummy-apache
+Group: Applications/System
+Vendor: SWsoft
+License: GPL
+Version: 1.0
+Release: 1.swsoft
+Autoreq: 0
+BuildRoot: %_tmppath/%name-root
+BuildArch: noarch
+
+%description
+Dummy package to tune apache MaxClients
+
+%install
+mkdir -p $RPM_BUILD_ROOT/etc/httpd/conf.d/
+cat > $RPM_BUILD_ROOT/etc/httpd/conf.d/swtune.conf << EOF 
+##
+## Server-Pool Size Regulation (MPM specific)
+## 
+
+# prefork MPM
+# StartServers: number of server processes to start
+# MinSpareServers: minimum number of server processes which are kept spare
+# MaxSpareServers: maximum number of server processes which are kept spare
+# ServerLimit: maximum value for MaxClients for the lifetime of the server
+# MaxClients: maximum number of server processes allowed to start
+# MaxRequestsPerChild: maximum number of requests a server process serves
+<IfModule prefork.c>
+StartServers       1
+MinSpareServers    1
+MaxSpareServers    5
+ServerLimit       10
+MaxClients        10
+MaxRequestsPerChild  4000
+</IfModule>
+
+# worker MPM
+# StartServers: initial number of server processes to start
+# MaxClients: maximum number of simultaneous client connections
+# MinSpareThreads: minimum number of worker threads which are kept spare
+# MaxSpareThreads: maximum number of worker threads which are kept spare
+# ThreadsPerChild: constant number of worker threads in each server process
+# MaxRequestsPerChild: maximum number of requests a server process serves
+<IfModule worker.c>
+StartServers       1
+MaxClients        10
+MinSpareThreads    1
+MaxSpareThreads    4
+ThreadsPerChild     25
+MaxRequestsPerChild  0
+</IfModule>
+
+EOF
+
+%files
+%attr (0644,root,root)/etc/httpd/conf.d/swtune.conf
+
+%changelog
+* Fri Oct 27 2006 Konstantin Volckov <wolf@sw.ru> 1.0-1.swsoft
+- created

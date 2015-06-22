@@ -1,0 +1,9 @@
+postgresql
+postgresql-server
+postgresql-devel
+postgresql-jdbc
+postgresql-odbc
+postgresql-python
+postgresql-tcl
+perl-DBD-Pg
+libdbi-dbd-pgsql

@@ -1,0 +1,23 @@
+Summary: Dummy package to fix jre uninstallation
+Name: vzdummy-jre-fc6
+Group: Applications/System
+Vendor: SWsoft
+License: GPL
+Version: 1.0
+Release: 1.swsoft
+Autoreq: 0
+BuildRoot: %_tmppath/%name-root
+BuildArch: noarch
+PreReq: gjdoc, eclipse-ecj
+
+%description
+Dummy package to fix jre uninstallation
+
+%triggerun -- gjdoc, eclipse-ecj
+echo "#!/bin/sh" >  /usr/bin/rebuild-gcj-db; echo "exit 0" >> /usr/bin/rebuild-gcj-db && chmod 0755 /usr/bin/rebuild-gcj-db || :
+
+%files
+
+%changelog
+* Fri Oct 27 2006 Konstantin Volckov <wolf@sw.ru> 1.0-1.swsoft
+- created

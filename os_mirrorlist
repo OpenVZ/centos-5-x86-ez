@@ -1,0 +1,4 @@
+$SW_SERVER/download/mirrors/centos-5
+$SW_SERVER/download/mirrors/updates-released-ce5
+http://mirrorlist.centos.org/?release=5&arch=i386&repo=os
+http://mirrorlist.centos.org/?release=5&arch=i386&repo=updates

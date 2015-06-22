@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rpm -e --justdb udev hotplug --nodeps > /dev/null 2>&1
+rpm -e --justdb lm_sensors --nodeps > /dev/null 2>&1
+
+:
