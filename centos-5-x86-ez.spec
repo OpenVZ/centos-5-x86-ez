@@ -51,7 +51,7 @@ Name: %templatename-%templatever-%templatearch-ez
 Group: Virtuozzo/Templates
 License: GPL
 Version: 7.0.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 BuildRoot: %_tmppath/%name-root
 BuildArch: noarch
 Requires: %package_manager_pkg
@@ -146,5 +146,8 @@ done
 %files -f files.lst
 
 %changelog
+* Tue Feb 16 2016 Alexandr Khryukin <akhryukin@virtuozzo.com> 7.0.0-3
+- Force creation of tty2 device (#PSBM-43871)
+
 * Wed Jun 17 2015 Konstantin Volckov <wolf@sw.ru> 7.0.0-1
 - Initial release
