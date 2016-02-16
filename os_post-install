@@ -31,6 +31,11 @@ if [ -f $CFG_FILE ]; then
 		move_file ${CFG_FILE}.$$ $CFG_FILE > /dev/null 2>&1
 fi
 
+CFG_FILE=etc/udev/makedev.d/50-udev.nodes
+if [ -f $CFG_FILE ]; then
+	echo "tty2" >> $CFG_FILE
+fi
+
 # replace locale-archive to symlink
 if [ -f /usr/lib/locale/locale-archive ] ; then
         rm -f /usr/lib/locale/locale-archive
