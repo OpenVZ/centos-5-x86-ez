@@ -33,7 +33,18 @@ fi
 
 CFG_FILE=etc/udev/makedev.d/50-udev.nodes
 if [ -f $CFG_FILE ]; then
+	echo "tty1" >> $CFG_FILE
 	echo "tty2" >> $CFG_FILE
+	echo "tty3" >> $CFG_FILE
+	echo "tty4" >> $CFG_FILE
+	echo "tty5" >> $CFG_FILE
+	echo "tty6" >> $CFG_FILE
+	echo "tty7" >> $CFG_FILE
+	echo "tty8" >> $CFG_FILE
+	echo "tty9" >> $CFG_FILE
+	echo "tty10" >> $CFG_FILE
+	echo "tty11" >> $CFG_FILE
+	echo "tty12" >> $CFG_FILE
 fi
 
 # replace locale-archive to symlink

@@ -51,7 +51,7 @@ Name: %templatename-%templatever-%templatearch-ez
 Group: Virtuozzo/Templates
 License: GPL
 Version: 7.0.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 BuildRoot: %_tmppath/%name-root
 BuildArch: noarch
 Requires: %package_manager_pkg
@@ -146,6 +146,9 @@ done
 %files -f files.lst
 
 %changelog
+* Fri Feb 19 2016 Denis Silakov <dsilakov@virtuozzo.com> 7.0.0-4
+- Force creation of 12 tty devices (#PSBM-44288)
+
 * Tue Feb 16 2016 Alexandr Khryukin <akhryukin@virtuozzo.com> 7.0.0-3
 - Force creation of tty2 device (#PSBM-43871)
 
