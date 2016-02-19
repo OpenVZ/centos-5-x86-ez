@@ -33,7 +33,9 @@ fi
 
 CFG_FILE=etc/udev/makedev.d/50-udev.nodes
 if [ -f $CFG_FILE ]; then
-	echo "tty2" >> $CFG_FILE
+	for i in `seq 1 12`; do
+		echo "tty${i}" >> $CFG_FILE
+	done
 fi
 
 # replace locale-archive to symlink
