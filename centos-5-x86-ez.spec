@@ -5,7 +5,7 @@
 
 # Human-readable attributes
 %define fullname Centos %templatever
-%define fulltemplatearch (for ix86)
+%define fulltemplatearch (for x86)
 
 # template dirs
 %define templatedir /vz/template/%templatename/%templatever/%templatearch/config
@@ -51,7 +51,7 @@ Name: %templatename-%templatever-%templatearch-ez
 Group: Virtuozzo/Templates
 License: GPL
 Version: 7.0.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 BuildRoot: %_tmppath/%name-root
 BuildArch: noarch
 Requires: %package_manager_pkg
@@ -146,6 +146,9 @@ done
 %files -f files.lst
 
 %changelog
+* Thu May 12 2016 Denis Silakov <dsilakov@virtuozzo.com> 7.0.0-6
+- Adjust template name (#PSBM-47008)
+
 * Fri Feb 19 2016 Denis Silakov <dsilakov@virtuozzo.com> 7.0.0-4
 - Force creation of 12 tty devices (#PSBM-44288)
 
